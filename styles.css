@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.banner {
+    background-image: url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 50vh; /* Cambia la altura del banner */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+}
+
+.container {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    position: relative;
+    overflow: visible;
+    margin-top: 0; /* Elimina cualquier margen superior */
+    padding-top: 0; /* Asegura que no haya padding superior */
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    position: relative;
+    overflow: visible;
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
+}
+
+.card {
+    width: 150px;
+    height: 250px; /* Puedes ajustar la altura de las tarjetas aquí */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 2s ease-out;
+    opacity: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px; /* Añade espacio entre las tarjetas */
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card p {
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card3, .card4, .card5 {
+    position: static; /* Permite que las tarjetas se posicionen automáticamente */
+    opacity: 1; /* Asegura que las tarjetas estén visibles */
+}
+
+.card1, .card2, .card6, .card7 {
+    position: absolute; /* Permite que las tarjetas se oculten al principio */
+    opacity: 0; /* Oculta las tarjetas al principio */
+}
+
+.animate-card3 .card3,
+.animate-card3 .card4,
+.animate-card3 .card5 {
+    animation: card3Animation 3s forwards ease-in-out;
+}
+
+.animate-others .card1,
+.animate-others .card2,
+.animate-others .card6,
+.animate-others .card7 {
+    transform: translateY(0);
+    opacity: 1; /* Asegura que las tarjetas se muestren al final */
+}
+
+@keyframes card3Animation {
+    0% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    70% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 120px;
+        height: 200px; /* Puedes ajustar la altura de las tarjetas en pantallas pequeñas aquí */
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .animate-others .card1 {
+        transform: translateX(-420px);
+    }
+
+    .animate-others .card2 {
+        transform: translateX(-280px);
+    }
+
+    .animate-others .card6 {
+        transform: translateX(280px);
+    }
+
+    .animate-others .card7 {
+        transform: translateX(420px);
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-contact p,
+.footer-policies p {
+    margin: 5px 0;
+}
+
+.footer-contact a,
+.footer-policies a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-social a {
+    margin: 0 10px;
+}
+
+.footer-social img {
+    height: 30px;
+    width: 30px;
+}
+
